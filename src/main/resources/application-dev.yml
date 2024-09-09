@@ -1,0 +1,28 @@
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coffeeshop
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 2000000
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  log-directory: logs
+  auth:
+    jwt-enc-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCs0ZI0Xt95GstcOD3CBbtto3zGyKTOYm24JkXh0MoLsLhd/KEdQ1DweDlYFaPTm1tHiQvMybqVhjaRoVnDJOSNRMsSSzLDk0Vfut//kV4O8oQPtrOD+9IgS88rSf7SCL6C/Kw1lXm81grEg+RUqIi2U5M0cO22bVQNEiZimca9IFcdQFizEad8X7XFvRu+Nlem4fYcaScVaibztt1ZDFL21GbARTrqFVZBh9J7/YnmeSt5n/bVvOP2ubcXB3kov2kEJG21VtzdxTK5MtIjBnLQZdaUe++MWqsf+jA4gL9sVq6XZwb7g5RLDSKPnqNlP+/9ascSPk1Ts5MuiMgp76oXAgMBAAECggEATSdQ8Q2MEmqacKTxOW5Ks5OCENMh9LvvxP9dQofutBJk9RzkpwZXG8xouYELv1yD/2dZO8eyA7BEK3cP9nXBjaoxSQ0GcFcO6UKqX1Q8XEr8F3HXKiziLiX6Kxbha06ZEyyQC2ocy+f5Lau+Y+dMBa5BMW/bSI79r8ozFeEWX3dVXsHERKmaoUMVMBa+/nUlhZAmsUHaXrgMwAX5lw3r3aIuOpIFK62jwvxzowImfO7qO2ACZtvHjeZIkBUKmQ81NlzfLc/tBoWeGxo0KvUbAVdx5tPJ5grzkbqu7MMJzRVk2ZU0bBu2RnEy4+GTdhVsfg5mLzbGn2UgMIZKD+RDdQKBgQDXq4nZ7av1dGn6BBUpte7MagzTlVo6RMOKxfqTmrPhWusRU6/HnAVwhUTGxz/LOQNPdCj259ysxTkHzdFsuKqjzwZjpqUz5I0z7QR8lgFc0xnGt2juP5DEOvIMgpLAkAdgiaJBsZMvhNL+AONAzUrePSWFNzwVGOpBxDWCA3V3NQKBgQDNIqr3ptck/SKBasOvb/lbkodo9U6iVV/GDJgtcDdEGhbFg1SfX/ljvLlIREV6MZs6P2BU27klIfTAtkPhT2hQPyXkRUpge8viWufyGf/rahTNQUFjmmYdv6fbjIJo9QRVpyugYDx3z+VJTP8fGik4ezcew6bn64RsSLWj/PUpmwKBgG6Z2Nr66Mm6xrJhr5yxYWJRLHzBRgFFzGX5e7SAjKkQICbFnQqnt55pqciq28tTVKBFeNCOPXwYtFONOE4iMdhJzgQCrQv8tHEhpsBhiRdaZwiifFxaGtqXRBQoTiwUcMQQMTaxY0LmQfHi8KgF39Qy1XAI0HYdTd0mSy5+qZnVAoGBAJbYJ2B1Dz/j5LvGBp+7d2IfHfPQb0JwBT1dhYnkOr+Zb6VOLawEpx7waE775Rs13y+16uB7smnbzl7nqILGIa7gwLxbN5Y7cnHA507gT5CNMT69/ZeAshauGIEZkcwcYFOb2jjUi6KO/cwpEnGMi0M9WAsHVHS2e2olDWzJVn6BAoGAFPX8uCNjBxotOgFdTuLtE13+dLpNDZZ5GW2WQbH6AJKfnu00KqiUsY1WcDhR58qOBYJ+u/76cOzhInp5hLtdXulDEyaxsPgO1nYVevZNjnW79Snp3AOHxn1Ajtit34WqD7TK5Bg+nCz7ckpyM3uMskwF8YRqRcNhYvYA8Ia7zHM=
+    jwt-exp-in-mills: 3600000

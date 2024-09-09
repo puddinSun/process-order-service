@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: process-order-service
+  profiles:
+    active: dev
