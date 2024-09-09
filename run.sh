@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Export environment variables
+# Export environment variables, for testing purpose only
 export JASYPT_ENCRYPTOR_PASSWORD=saitama
 export DB_USERNAME=admin
 export DB_PASSWORD=123456

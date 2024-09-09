@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "959a368d-902e-4e85-964d-2c23e2b4ed67",
+		"name": "processOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4959872",
+		"_collection_link": "https://massive-backend-hub.postman.co/workspace/X-Phy~24a983ae-9dde-475f-9bf9-279246ba9441/collection/4959872-959a368d-902e-4e85-964d-2c23e2b4ed67?action=share&source=collection_link&creator=4959872"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerName\": \"Leonardo Dicaprio\",\n    \"address\": \"California\",\n    \"countryCode\": \"+65\",\n    \"mobileNumber\": \"11112224\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"countryCode\": \"+65\",\n    \"mobileNumber\": \"11112224\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/auth/otp/retrieve",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"otp",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-with-otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"countryCode\": \"+65\",\n    \"mobileNumber\": \"11112224\",\n    \"otp\": \"111111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/auth/otp/login",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"otp",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view-nearby-shops",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"latitude\": 21.020174888508997,\n    \"longitude\": 105.77516731309518,\n    \"distanceInKm\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/shops/nearby",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shops",
+						"nearby"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-shop-menus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/shops/3a6d3d2c-5918-4c73-ab6b-5e7efea22af7/menus",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shops",
+						"3a6d3d2c-5918-4c73-ab6b-5e7efea22af7",
+						"menus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "place-order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"shopId\": \"3a6d3d2c-5918-4c73-ab6b-5e7efea22af7\",\n    \"notes\": \"purchased\",\n    \"orderItems\": [\n        {\n            \"itemId\": \"75f9a05d-0e56-477f-bf44-11a4184b7fdb\",\n            \"price\": 8.49,\n            \"quantity\": 2\n        },\n        {\n            \"itemId\": \"d06d6b3c-1ac6-455c-820b-9856d98e8434\",\n            \"price\": 9.49,\n            \"quantity\": 5\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/orders/init",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complete-order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"6df8b8df-a000-4cad-b6e9-b37d22bbcbf2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/orders/complete",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel-order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"6df8b8df-a000-4cad-b6e9-b37d22bbcbf2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/orders/cancel",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "finish-order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"6df8b8df-a000-4cad-b6e9-b37d22bbcbf2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://77.37.47.199:8080/api/v1/orders/ready",
+					"protocol": "http",
+					"host": [
+						"77",
+						"37",
+						"47",
+						"199"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"ready"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
